@@ -1,13 +1,13 @@
 "use client";
-import Link from "next/link";
+
 import { useRouter } from "next/navigation";
 import { useParams } from "next/navigation";
 
-function CustomPagination() {
+function CustomPagination({ baseDir, subDir, subDirPageCountkey }) {
     const router = useRouter();
     const params = useParams();
 
-    const currentPage = Number(params.pageNumber) || 1;
+    const currentPage = Number(params[subDirPageCountkey]) || 1;
 
     return (
         <div className="flex justify-center items-center gap-4">
@@ -18,9 +18,9 @@ function CustomPagination() {
                 disabled={currentPage === 1}
                 onClick={() => {
                     if (currentPage === 2) {
-                        router.push(`/products`);
+                        router.push(`/${baseDir}`);
                     } else {
-                        router.push(`/products/page/${currentPage - 1}`);
+                        router.push(`/${baseDir}/${subDir}/${currentPage - 1}`);
                     }
                 }}
             >
@@ -29,28 +29,11 @@ function CustomPagination() {
             <button
                 className="px-6 py-2 bg-slate-400 rounded-xl"
                 onClick={() => {
-                    router.push(`/products/page/${currentPage + 1}`);
+                    router.push(`/${baseDir}/${subDir}/${currentPage + 1}`);
                 }}
             >
                 Next
             </button>
-
-            {/* <Link
-                className="px-6 py-2 bg-slate-400 rounded-xl"
-                href={
-                    currentPage === 2
-                        ? `/products`
-                        : `/products/page/${currentPage - 1}`
-                }
-            >
-                Prev
-            </Link>
-            <Link
-                className="px-6 py-2 bg-slate-400 rounded-xl"
-                href={`/products/page/${currentPage + 1}`}
-            >
-                Next
-            </Link> */}
         </div>
     );
 }
