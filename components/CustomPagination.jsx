@@ -20,7 +20,7 @@ function CustomPagination() {
                 className="px-6 py-2 bg-slate-400 rounded-xl"
                 onClick={() => {
                     if (currentPage === 2) {
-                        router.push(`/products/`);
+                        router.push(`/products`);
                     } else {
                         router.push(`/products/page/${currentPage - 1}`);
                     }
@@ -31,11 +31,12 @@ function CustomPagination() {
             <button
                 className="px-6 py-2 bg-slate-400 rounded-xl"
                 onClick={() => {
-                    if (currentPage === 1) {
-                        router.push(`/products/page/${currentPage}`);
-                    } else {
-                        router.push(`/products/page/${currentPage + 1}`);
-                    }
+                    // if (currentPage === 1) {
+                    //     router.push(`/products/page/${currentPage}`);
+                    // } else {
+                    //     router.push(`/products/page/${currentPage + 1}`);
+                    // }
+                    router.push(`/products/page/${currentPage + 1}`);
                 }}
             >
                 Next
