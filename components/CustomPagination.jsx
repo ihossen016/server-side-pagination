@@ -12,7 +12,10 @@ function CustomPagination() {
     return (
         <div className="flex justify-center items-center gap-4">
             <button
-                className="px-6 py-2 bg-slate-400 rounded-xl"
+                className={`px-6 py-2 bg-slate-400 rounded-xl ${
+                    currentPage === 1 ? "cursor-not-allowed" : ""
+                }`}
+                disabled={currentPage === 1}
                 onClick={() => {
                     if (currentPage === 2) {
                         router.push(`/products`);
