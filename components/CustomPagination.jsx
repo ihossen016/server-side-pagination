@@ -1,7 +1,6 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-import { useParams } from "next/navigation";
+import { useRouter, useParams } from "next/navigation";
 
 function CustomPagination({ baseDir, subDir, subDirPageCountkey }) {
     const router = useRouter();
