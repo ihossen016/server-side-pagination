@@ -7,12 +7,7 @@ function CustomPagination() {
     const router = useRouter();
     const params = useParams();
 
-    // const [currentPage, setCurrentPage] = useState();
     const currentPage = Number(params.pageNumber) || 1;
-
-    // const handleClick = value => {
-    //     setCurrentPage(prevPage => prevPage + value);
-    // };
 
     return (
         <div className="flex justify-center items-center gap-4">
@@ -31,16 +26,28 @@ function CustomPagination() {
             <button
                 className="px-6 py-2 bg-slate-400 rounded-xl"
                 onClick={() => {
-                    // if (currentPage === 1) {
-                    //     router.push(`/products/page/${currentPage}`);
-                    // } else {
-                    //     router.push(`/products/page/${currentPage + 1}`);
-                    // }
                     router.push(`/products/page/${currentPage + 1}`);
                 }}
             >
                 Next
             </button>
+
+            {/* <Link
+                className="px-6 py-2 bg-slate-400 rounded-xl"
+                href={
+                    currentPage === 2
+                        ? `/products`
+                        : `/products/page/${currentPage - 1}`
+                }
+            >
+                Prev
+            </Link>
+            <Link
+                className="px-6 py-2 bg-slate-400 rounded-xl"
+                href={`/products/page/${currentPage + 1}`}
+            >
+                Next
+            </Link> */}
         </div>
     );
 }
