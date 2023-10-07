@@ -1,9 +1,8 @@
 import CustomPagination from "@/components/CustomPagination";
-import React from "react";
 
 function PageNumber() {
     return (
-        <div className="w-full h-screen flex justify-center items-center">
+        <div className="w-full h-screen flex justify-center items-center flex-col gap-8">
             <CustomPagination
                 baseDir={"products"}
                 subDir={"page"}
