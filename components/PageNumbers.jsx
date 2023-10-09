@@ -10,7 +10,7 @@ const PageNumbers = ({ pageNumbers, currentPage, baseDir, subDir }) => {
             <Link
                 key={pageNumber}
                 href={
-                    pageNumber != 1
+                    pageNumber > 1
                         ? `/${baseDir}/${subDir}/${pageNumber}`
                         : `/${baseDir}`
                 }

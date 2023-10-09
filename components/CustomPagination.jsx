@@ -12,30 +12,50 @@ function CustomPagination({ baseDir, subDir, subDirPageCountkey, totalPage }) {
 
     return (
         <div className="flex justify-center items-center gap-4">
-            <Link
-                className={`px-6 py-2 bg-slate-400 rounded-xl ${
-                    currentPage === 1 ? "cursor-not-allowed" : ""
-                }`}
-                href={
-                    currentPage <= 2
-                        ? `/${baseDir}`
-                        : `/${baseDir}/${subDir}/${currentPage - 1}`
-                }
-            >
-                Prev
-            </Link>
+            {currentPage === 1 ? (
+                <button
+                    className={`px-6 py-2 bg-slate-400 rounded-xl cursor-not-allowed`}
+                    disabled
+                >
+                    Prev
+                </button>
+            ) : (
+                <Link
+                    className={`px-6 py-2 bg-slate-400 rounded-xl ${
+                        currentPage === 1 ? "cursor-not-allowed" : ""
+                    }`}
+                    href={
+                        currentPage <= 2
+                            ? `/${baseDir}`
+                            : `/${baseDir}/${subDir}/${currentPage - 1}`
+                    }
+                >
+                    Prev
+                </Link>
+            )}
+
             <PageNumbers
                 pageNumbers={pageNumbers}
                 currentPage={currentPage}
                 baseDir={"products"}
                 subDir={"page"}
             />
-            <Link
-                className="px-6 py-2 bg-slate-400 rounded-xl"
-                href={`/${baseDir}/${subDir}/${currentPage + 1}`}
-            >
-                Next
-            </Link>
+
+            {currentPage === totalPage ? (
+                <button
+                    className={`px-6 py-2 bg-slate-400 rounded-xl cursor-not-allowed`}
+                    disabled
+                >
+                    Next
+                </button>
+            ) : (
+                <Link
+                    className={`px-6 py-2 bg-slate-400 rounded-xl`}
+                    href={`/${baseDir}/${subDir}/${currentPage + 1}`}
+                >
+                    Next
+                </Link>
+            )}
         </div>
     );
 }
