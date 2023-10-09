@@ -1,24 +1,24 @@
 "use client";
-import React, { useState } from "react";
 
-const PageNumbers = ({ pageNumbers }) => {
-    const [currentPage, setCurrentPage] = useState(1);
+import Link from "next/link";
+
+const PageNumbers = ({ pageNumbers, currentPage, baseDir, subDir }) => {
     const maxVisiblePages = 3;
 
     const createPageButton = pageNumber => {
         return (
-            <button
+            <Link
                 key={pageNumber}
-                onClick={() => handlePageClick(pageNumber)}
+                href={
+                    pageNumber != 1
+                        ? `/${baseDir}/${subDir}/${pageNumber}`
+                        : `/${baseDir}`
+                }
                 className={currentPage === pageNumber ? "text-red-600" : ""}
             >
                 {pageNumber}
-            </button>
+            </Link>
         );
-    };
-
-    const handlePageClick = pageNumber => {
-        setCurrentPage(pageNumber);
     };
 
     const renderPagination = () => {

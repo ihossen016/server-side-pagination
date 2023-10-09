@@ -7,6 +7,7 @@ function PageNumber() {
                 baseDir={"products"}
                 subDir={"page"}
                 subDirPageCountkey={"pageNumber"}
+                totalPage={20}
             />
         </div>
     );
