@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 
-const Pagination = ({ pageNumbers }) => {
+const PageNumbers = ({ pageNumbers }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const maxVisiblePages = 3;
 
@@ -68,4 +68,4 @@ const Pagination = ({ pageNumbers }) => {
     );
 };
 
-export default Pagination;
+export default PageNumbers;
