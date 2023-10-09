@@ -1,6 +1,9 @@
+import Pagination from "@/components/Pagination";
 import Link from "next/link";
 
 export default function Home() {
+    const pageNumbers = Array.from({ length: 20 }, (_, i) => i + 1);
+
     return (
         <div className="w-full h-screen flex justify-center items-center">
             <Link
@@ -9,6 +12,9 @@ export default function Home() {
             >
                 Go to Products
             </Link>
+            <div>
+                <Pagination pageNumbers={pageNumbers} />
+            </div>
         </div>
     );
 }
