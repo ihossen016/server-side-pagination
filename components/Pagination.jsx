@@ -27,24 +27,23 @@ const Pagination = ({ pageNumbers }) => {
         if (totalPages <= maxVisiblePages) {
             return pageNumbers.map(pageNumber => createPageButton(pageNumber));
         } else {
-            const startPage = Math.max(
+            let startPage = Math.max(
                 1,
                 currentPage - Math.floor(maxVisiblePages / 2)
             );
+            let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
 
-            const endPage = Math.min(
-                totalPages,
-                startPage + maxVisiblePages - 1
-            );
+            if (endPage - startPage < maxVisiblePages - 1) {
+                startPage = Math.max(1, endPage - maxVisiblePages + 1);
+            }
 
             const buttons = [];
 
             if (startPage > 1) {
                 buttons.push(createPageButton(1));
-            }
-
-            if (startPage > 2) {
-                buttons.push(<span key="start-ellipsis">...</span>);
+                if (startPage > 2) {
+                    buttons.push(<span key="start-ellipsis">...</span>);
+                }
             }
 
             for (let i = startPage; i <= endPage; i++) {
@@ -52,7 +51,9 @@ const Pagination = ({ pageNumbers }) => {
             }
 
             if (endPage < totalPages) {
-                buttons.push(<span key="end-ellipsis">...</span>);
+                if (endPage < totalPages - 1) {
+                    buttons.push(<span key="end-ellipsis">...</span>);
+                }
                 buttons.push(createPageButton(totalPages));
             }
 
