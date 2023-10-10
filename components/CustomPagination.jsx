@@ -4,13 +4,20 @@ import { useParams } from "next/navigation";
 import PageNumbers from "./PageNumbers";
 import Link from "next/link";
 
-function CustomPagination({ baseDir, subDir, subDirPageCountkey, totalPage }) {
+function CustomPagination({
+    baseDir,
+    subDir,
+    subDirPageCountkey,
+    totalPage,
+    defaultPrevNextStyles = "px-3 md:px-6 py-2 bg-slate-400 rounded-xl text-sm md:text-base text-white",
+}) {
     const params = useParams();
 
     const currentPage = Number(params[subDirPageCountkey]) || 1;
-    const pageNumbers = Array.from({ length: totalPage }, (_, i) => i + 1);
-    const defaultPrevNextStyles =
-        "px-3 md:px-6 py-2 bg-slate-400 rounded-xl text-sm md:text-base";
+    const pageNumbers = Array.from(
+        { length: Number(totalPage) },
+        (_, i) => i + 1
+    );
 
     return (
         <div className="flex justify-center items-center gap-1 md:gap-8">
@@ -43,7 +50,7 @@ function CustomPagination({ baseDir, subDir, subDirPageCountkey, totalPage }) {
                 subDir={subDir}
             />
 
-            {currentPage === totalPage ? (
+            {currentPage === Number(totalPage) ? (
                 <button
                     className={`${defaultPrevNextStyles} cursor-not-allowed`}
                     disabled

@@ -2,13 +2,16 @@
 
 import Link from "next/link";
 
-const PageNumbers = ({ pageNumbers, currentPage, baseDir, subDir }) => {
-    const maxVisiblePages = 4;
-    const defaultLinkStyles =
-        "flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-full text-sm font-medium";
-    const defaultActiveStyles = "text-red-600 border-2 border-red-600";
-    const defaultTextStyles = "text-black";
-
+const PageNumbers = ({
+    pageNumbers,
+    currentPage,
+    baseDir,
+    subDir,
+    maxVisiblePages = 3,
+    defaultLinkStyles = "flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-full text-sm font-medium",
+    defaultActiveStyles = "text-red-600 border-2 border-red-600",
+    defaultTextStyles = "text-black",
+}) => {
     const createPageButton = pageNumber => {
         return (
             <Link
