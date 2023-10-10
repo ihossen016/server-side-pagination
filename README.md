@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Server Side Pagination
 
-## Getting Started
+If you are looking for a pagination for your **Next JS** application that will help you to achieve a url structure like `www.xyz.com/products/page/1, www.xyz.com/products/page/2` then you are in the right place.
 
-First, run the development server:
+**Server Side Pagination** is a pagination package that helps user to do server side pagination with **Next 13.4** and above. It uses the functionalities of latest **Next JS** and it's **App Router**. This pagination design can easily be changed with **Tailwind CSS Classes** or you can add your **Custom CSS Classes**.
+
+## Installation
+
+You can install **Server Side Pagination** using npm or yarn:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install Server Side Pagination
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+or
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash
+yarn add Server Side Pagination
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Usages
 
-## Learn More
+First create routes in your **Next JS** application like below
+![Directory sample](public/images/image.png)
 
-To learn more about Next.js, take a look at the following resources:
+#### more usages content goes here ...
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Demo
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+[Live Demo](https://server-side-pagination-one.vercel.app/)
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This package is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Issues
+
+If you encounter any issues or have questions about this package, please feel free to [open an issue](https://github.com/ihossen016/server-side-pagination/issues) on GitHub.
+
+## Author
+
+**Server Side Pagination** is maintained by [Ismail Hossen](https://github.com/ihossen016).
+
+Thank you for using **Server Side Pagination**!
