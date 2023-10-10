@@ -3,7 +3,11 @@
 import Link from "next/link";
 
 const PageNumbers = ({ pageNumbers, currentPage, baseDir, subDir }) => {
-    const maxVisiblePages = 3;
+    const maxVisiblePages = 4;
+    const defaultLinkStyles =
+        "flex items-center justify-center w-10 h-10 rounded-full text-sm font-medium";
+    const defaultActiveStyles = "text-red-600 border-2 border-red-600";
+    const defaultTextStyles = "text-black";
 
     const createPageButton = pageNumber => {
         return (
@@ -14,7 +18,11 @@ const PageNumbers = ({ pageNumbers, currentPage, baseDir, subDir }) => {
                         ? `/${baseDir}/${subDir}/${pageNumber}`
                         : `/${baseDir}`
                 }
-                className={currentPage === pageNumber ? "text-red-600" : ""}
+                className={
+                    currentPage === pageNumber
+                        ? `${defaultLinkStyles} ${defaultActiveStyles}`
+                        : `${defaultLinkStyles} ${defaultTextStyles}`
+                }
             >
                 {pageNumber}
             </Link>
@@ -62,7 +70,7 @@ const PageNumbers = ({ pageNumbers, currentPage, baseDir, subDir }) => {
     };
 
     return (
-        <div className="flex items-center justify-center gap-2">
+        <div className="flex items-center justify-center gap-4">
             {renderPagination()}
         </div>
     );

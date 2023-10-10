@@ -11,7 +11,7 @@ function CustomPagination({ baseDir, subDir, subDirPageCountkey, totalPage }) {
     const pageNumbers = Array.from({ length: totalPage }, (_, i) => i + 1);
 
     return (
-        <div className="flex justify-center items-center gap-4">
+        <div className="flex justify-center items-center gap-8">
             {currentPage === 1 ? (
                 <button
                     className={`px-6 py-2 bg-slate-400 rounded-xl cursor-not-allowed`}
