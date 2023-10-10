@@ -37,8 +37,8 @@ function CustomPagination({ baseDir, subDir, subDirPageCountkey, totalPage }) {
             <PageNumbers
                 pageNumbers={pageNumbers}
                 currentPage={currentPage}
-                baseDir={"products"}
-                subDir={"page"}
+                baseDir={baseDir}
+                subDir={subDir}
             />
 
             {currentPage === totalPage ? (
