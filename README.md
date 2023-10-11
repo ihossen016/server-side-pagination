@@ -21,6 +21,9 @@ yarn add Server Side Pagination
 ## Usages
 
 First create routes in your **Next JS** application like below
+
+######
+
 ![Directory sample](public/images/image.png)
 
 #### more usages content goes here ...
