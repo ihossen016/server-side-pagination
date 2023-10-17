@@ -69,7 +69,7 @@ const PageNumbers = ({
         }
     };
 
-    return <div className="rnp-numbers-container">{renderPagination()}</div>;
+    return <div className={"rnp-numbers-container"}>{renderPagination()}</div>;
 };
 
 export default PageNumbers;
