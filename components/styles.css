@@ -18,7 +18,46 @@
     border: 1px solid #8d99ae;
     transition: 0.4s all ease-in-out;
 }
-.rnp-prev-next:hover {
+.rnp-prev-next:hover:not(:disabled) {
     background: #8d99ae;
     color: #fff;
+}
+.rnp-numbers-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.rnp-page-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #1d3557;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid #8d99ae;
+}
+.rnp-page-number.active {
+    background: #8d99ae;
+    color: #fff;
+}
+
+@media screen and (min-width: 350px) and (max-width: 760px) {
+    .rnp-container,
+    .rnp-numbers-container {
+        gap: 5px;
+    }
+    .rnp-prev-next {
+        font-size: 13px;
+        padding: 5px 15px;
+    }
+    .rnp-page-number {
+        width: 30px;
+        height: 30px;
+        font-size: 13px;
+    }
 }

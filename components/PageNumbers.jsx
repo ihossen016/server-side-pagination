@@ -18,7 +18,11 @@ const PageNumbers = ({
                         ? `/${baseDir}/${subDir}/${pageNumber}`
                         : `/${baseDir}`
                 }
-                className={""}
+                className={
+                    pageNumber === currentPage
+                        ? "rnp-page-number active"
+                        : "rnp-page-number"
+                }
             >
                 {pageNumber}
             </Link>
@@ -65,7 +69,7 @@ const PageNumbers = ({
         }
     };
 
-    return <div className="">{renderPagination()}</div>;
+    return <div className="rnp-numbers-container">{renderPagination()}</div>;
 };
 
 export default PageNumbers;
