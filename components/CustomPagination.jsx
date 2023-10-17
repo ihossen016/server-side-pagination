@@ -3,14 +3,9 @@
 import { useParams } from "next/navigation";
 import PageNumbers from "./PageNumbers";
 import Link from "next/link";
+import "./styles.css";
 
-function CustomPagination({
-    baseDir,
-    subDir,
-    subDirPageCountkey,
-    totalPage,
-    defaultPrevNextStyles = "px-3 md:px-6 py-2 bg-slate-400 rounded-xl text-sm md:text-base text-white",
-}) {
+function CustomPagination({ baseDir, subDir, subDirPageCountkey, totalPage }) {
     const params = useParams();
 
     const currentPage = Number(params[subDirPageCountkey]) || 1;
@@ -20,19 +15,14 @@ function CustomPagination({
     );
 
     return (
-        <div className="flex justify-center items-center gap-1 md:gap-8">
+        <div className="rnp-container">
             {currentPage === 1 ? (
-                <button
-                    className={`${defaultPrevNextStyles} cursor-not-allowed`}
-                    disabled
-                >
+                <button className={"rnp-prev-next disable-btn"} disabled>
                     Prev
                 </button>
             ) : (
                 <Link
-                    className={`${defaultPrevNextStyles} ${
-                        currentPage === 1 ? "cursor-not-allowed" : ""
-                    }`}
+                    className={"rnp-prev-next"}
                     href={
                         currentPage <= 2
                             ? `/${baseDir}`
@@ -51,15 +41,12 @@ function CustomPagination({
             />
 
             {currentPage === Number(totalPage) ? (
-                <button
-                    className={`${defaultPrevNextStyles} cursor-not-allowed`}
-                    disabled
-                >
+                <button className={"rnp-prev-next disable-btn"} disabled>
                     Next
                 </button>
             ) : (
                 <Link
-                    className={`${defaultPrevNextStyles}`}
+                    className={"rnp-prev-next"}
                     href={`/${baseDir}/${subDir}/${currentPage + 1}`}
                 >
                     Next

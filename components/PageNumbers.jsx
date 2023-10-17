@@ -8,9 +8,6 @@ const PageNumbers = ({
     baseDir,
     subDir,
     maxVisiblePages = 3,
-    defaultLinkStyles = "flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-full text-sm font-medium",
-    defaultActiveStyles = "text-red-600 border-2 border-red-600",
-    defaultTextStyles = "text-black",
 }) => {
     const createPageButton = pageNumber => {
         return (
@@ -21,11 +18,7 @@ const PageNumbers = ({
                         ? `/${baseDir}/${subDir}/${pageNumber}`
                         : `/${baseDir}`
                 }
-                className={
-                    currentPage === pageNumber
-                        ? `${defaultLinkStyles} ${defaultActiveStyles}`
-                        : `${defaultLinkStyles} ${defaultTextStyles}`
-                }
+                className={""}
             >
                 {pageNumber}
             </Link>
@@ -72,11 +65,7 @@ const PageNumbers = ({
         }
     };
 
-    return (
-        <div className="flex items-center justify-center gap-1 md:gap-4">
-            {renderPagination()}
-        </div>
-    );
+    return <div className="">{renderPagination()}</div>;
 };
 
 export default PageNumbers;
